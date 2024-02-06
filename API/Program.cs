@@ -12,8 +12,14 @@ builder.Services.AddDbContext<DataContext>(opt =>
     opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
+//add controllers
+builder.Services.AddControllers();
+
 var app = builder.Build();
 
 app.UseHttpsRedirection();
+app.UseAuthentication();
+app.MapControllers();
+
 
 app.Run();
