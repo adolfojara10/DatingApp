@@ -21,7 +21,7 @@ var app = builder.Build();
 
 //this line is to allow cors. it means the browser acn show what it gets from the backend
 //this happens due to the fact that the backend and frontend are hearing in different ports
-app.UseCors(builder => builder.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200"));
+app.UseCors(builder => builder.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200","http://localhost:4200"));
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.MapControllers();
