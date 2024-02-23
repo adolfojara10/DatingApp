@@ -1,4 +1,5 @@
 using API.Extensions;
+using API.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +13,9 @@ builder.Services.AddIdentityServices(builder.Configuration); //IdentityServiceEx
 builder.Services.AddControllers();
 
 var app = builder.Build();
+
+//añadir middleware
+app.UseMiddleware<ExceptionMiddleware>();
 
 
 //this line is to allow cors. it means the browser acn show what it gets from the backend

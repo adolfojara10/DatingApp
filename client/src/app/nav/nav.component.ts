@@ -16,7 +16,7 @@ export class NavComponent implements OnInit {
   //loggedIn = false;
 
 
-  constructor(public accountService: AccountService, private router: Router, 
+  constructor(public accountService: AccountService, private router: Router,
     private toaster: ToastrService) {
 
   }
@@ -34,7 +34,7 @@ export class NavComponent implements OnInit {
         //this.loggedIn = true;
       },
       //error: error => console.log(error)
-      error: error => this.toaster.error(error.error)
+      //error: error => this.toaster.error(error.error)
     });
 
   }
